@@ -1,0 +1,39 @@
+{
+    "name": "goldoni/laravel-softarchive",
+    "description": "Ajoute un système d'archivage similaire à SoftDeletes pour Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Goldoni\\LaravelSoftarchive\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Goldoni\\LaravelSoftarchive\\SoftArchiveServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Goldoni",
+            "email": "fotsa.goldoni@yahoo.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2",
+        "illuminate/database": "^12.0",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "3.x-dev",
+        "pestphp/pest-plugin-laravel": "3.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
