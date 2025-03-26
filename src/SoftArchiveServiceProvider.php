@@ -14,9 +14,11 @@ class SoftArchiveServiceProvider extends ServiceProvider
 
         Blueprint::macro('softArchive', fn () => $this->timestamp($defaultArchivedColumn)->nullable()->index());
 
-        $this->publishes([
-            __DIR__ . '/../config/softarchive.php' => config_path('softarchive.php'),
-        ], 'config');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/softarchive.php' => config_path('softarchive.php'),
+            ], 'config');
+        }
     }
 
     public function register(): void
