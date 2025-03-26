@@ -12,6 +12,10 @@ trait HasSoftArchive
         static::addGlobalScope(new SoftArchiveScope());
     }
 
+    protected $casts = [
+        'archived_at' => 'datetime',
+    ];
+
     public function archive(): bool
     {
         return $this->update(['archived_at' => now()]);
